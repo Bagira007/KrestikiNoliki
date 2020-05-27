@@ -16,3 +16,12 @@ C:\Users\Bagrat\Desktop\AppCSharp\AppCSharp\obj\Debug\AppCSharp.Properties.Resou
 C:\Users\Bagrat\Desktop\AppCSharp\AppCSharp\obj\Debug\AppCSharp.csproj.GenerateResource.cache
 C:\Users\Bagrat\Desktop\AppCSharp\AppCSharp\obj\Debug\AppCSharp.exe
 C:\Users\Bagrat\Desktop\AppCSharp\AppCSharp\obj\Debug\AppCSharp.pdb
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\bin\Debug\AppCSharp.exe.config
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\bin\Debug\AppCSharp.exe
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\bin\Debug\AppCSharp.pdb
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.csprojAssemblyReference.cache
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.Form1.resources
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.Properties.Resources.resources
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.csproj.GenerateResource.cache
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.exe
+C:\Users\Bagrat\Desktop\AppCSharp\KrestikiNoliki\AppCSharp\obj\Debug\AppCSharp.pdb

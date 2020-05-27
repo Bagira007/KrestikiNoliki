@@ -35,7 +35,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(526, 212);
+            this.label1.Location = new System.Drawing.Point(502, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 9;
@@ -59,7 +59,7 @@
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Крестики-Нолики";
             this.ResumeLayout(false);
             this.PerformLayout();
 

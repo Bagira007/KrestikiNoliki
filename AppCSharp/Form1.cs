@@ -16,13 +16,14 @@ namespace AppCSharp
     {
         private Button[,] buttons  = new Button[3,3];
         private int player;
-        private bool winner;
+        private int k=0;
         public Form1()
         {
             InitializeComponent();
             this.Height = 530;
             this.Width = 680;
             player = 1;
+            label1.Font = new Font(new FontFamily("Microsoft Sans Serif"), 14);
             label1.Text = "Ходит крестик";
             for (int i = 0; i < buttons.Length / 3; i++)
             {
@@ -44,7 +45,7 @@ namespace AppCSharp
                     buttons[i, j].Location = new Point(12 + 160 * j, 12 + 160 * i);
                     buttons[i, j].Click += button1_Click;
                     buttons[i, j].Font = new Font(new FontFamily("Microsoft Sans Serif"), 100);
-                    buttons[i, j].Text = "";
+                    buttons[i, j].Text = " ";
                     this.Controls.Add(buttons[i, j]);
                 }
             }
@@ -55,7 +56,7 @@ namespace AppCSharp
             switch (player)
             {
                 case 1:
-                    sender.GetType().GetProperty("Text").SetValue(sender, "X");                    
+                    sender.GetType().GetProperty("Text").SetValue(sender, "X");
                     player = 0;
                     label1.Text = "Ходит нолик";
                     break;
@@ -70,149 +71,52 @@ namespace AppCSharp
         }
         private void checkWin()
         {
-            try
-            {
+            k++;
+            if (
+(buttons[0, 0].Text == "X" && buttons[0, 1].Text == "X" && buttons[0, 2].Text == "X") ||
+(buttons[1, 0].Text == "X" && buttons[1, 1].Text == "X" && buttons[1, 2].Text == "X") ||
+(buttons[2, 0].Text == "X" && buttons[2, 1].Text == "X" && buttons[2, 2].Text == "X") ||
+(buttons[0, 0].Text == "X" && buttons[1, 0].Text == "X" && buttons[2, 0].Text == "X") ||
+(buttons[0, 1].Text == "X" && buttons[1, 1].Text == "X" && buttons[2, 1].Text == "X") ||
+(buttons[0, 2].Text == "X" && buttons[1, 2].Text == "X" && buttons[2, 2].Text == "X") ||
+(buttons[0, 0].Text == "X" && buttons[1, 1].Text == "X" && buttons[2, 2].Text == "X") ||
+(buttons[2, 0].Text == "X" && buttons[1, 1].Text == "X" && buttons[0, 2].Text == "X") 
+                    )
                 {
-                    winner = true;
-
-                    if (buttons[0, 0].Text == buttons[0, 1].Text && buttons[0, 1].Text == buttons[0, 2].Text)
-                    {
-                        if (buttons[0, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[0, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-
-
-                    else if (buttons[1, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[1, 2].Text)
-                    {
-                        if (buttons[1, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[1, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-
-                    else if (buttons[2, 0].Text == buttons[2, 1].Text && buttons[2, 1].Text == buttons[2, 2].Text)
-                    {
-                        if (buttons[2, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[2, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-                    else if (buttons[0, 0].Text == buttons[1, 0].Text && buttons[1, 0].Text == buttons[2, 0].Text)
-                    {
-                        if (buttons[0, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[0, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-                    else if (buttons[0, 1].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 1].Text)
-                    {
-                        if (buttons[0, 1].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[0, 1].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-                    else if (buttons[0, 2].Text == buttons[1, 2].Text && buttons[1, 2].Text == buttons[2, 2].Text)
-                    {
-                        if (buttons[0, 2].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[0, 2].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-                    else if (buttons[0, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 2].Text)
-                    {
-                        if (buttons[0, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[0, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-
-                    else if (buttons[2, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[0, 2].Text)
-                    {
-                        if (buttons[2, 0].Text == "X")
-                        {
-                            MessageBox.Show("Победили крестики!");
-                            winner = false;
-                            clear_box();
-                        }
-                        if (buttons[2, 0].Text == "O")
-                        {
-                            MessageBox.Show("Победили нолики!");
-                            winner = false;
-                            clear_box();
-                        }
-                    }
-                    else
-                    //if(winner)
-                    {
-                        MessageBox.Show("Ничья!");
-                        clear_box();
-                    }
+                    MessageBox.Show("Победили крестики!");
+                    k = 0;
+                    clear_box();
                 }
+                if (
+(buttons[0, 0].Text == "O" && buttons[0, 1].Text == "O" && buttons[0, 2].Text == "O") ||
+(buttons[1, 0].Text == "O" && buttons[1, 1].Text == "O" && buttons[1, 2].Text == "O") ||
+(buttons[2, 0].Text == "O" && buttons[2, 1].Text == "O" && buttons[2, 2].Text == "O") ||
+(buttons[0, 0].Text == "O" && buttons[1, 0].Text == "O" && buttons[2, 0].Text == "O") ||
+(buttons[0, 1].Text == "O" && buttons[1, 1].Text == "O" && buttons[2, 1].Text == "O") ||
+(buttons[0, 2].Text == "O" && buttons[1, 2].Text == "O" && buttons[2, 2].Text == "O") ||
+(buttons[0, 0].Text == "O" && buttons[1, 1].Text == "O" && buttons[2, 2].Text == "O") ||
+(buttons[2, 0].Text == "O" && buttons[1, 1].Text == "O" && buttons[0, 2].Text == "O")
+                    )
+                {
+                MessageBox.Show("Победили нолики!");
+                k = 0;
+                clear_box();
+                }
+            if (k == 9)
+            {
+                MessageBox.Show("Ничья!");
+                k = 0;
+                clear_box();
             }
-            catch { }
+
         }
 
 
         private void clear_box()
         {
+            player = 1;
+            k = 0;
+            label1.Text = "Ходит крестик";
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -225,6 +129,7 @@ namespace AppCSharp
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             player = 1;
+            k = 0;
             label1.Text = "Ходит крестик";
             for (int i = 0; i < 3; i++)
             {
